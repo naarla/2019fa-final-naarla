@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+v = {editable = true,version = "*"}
+
+[packages]
+awscli = "*"
+pandas = "*"
+flake8-pytest-mark = "==0.1.0"
+openpyxl = "*"
+setuptools_scm ="*"
+csci-utils = {editable = true,git = "https://github.com/csci-e-29/2019fa-csci-utils-naarla"}
+
+[requires]
+python_version = "3.7"

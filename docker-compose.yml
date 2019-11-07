@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
+    build: 
+      context: .
+      args:
+        - CI_USER_TOKEN=${CI_USER_TOKEN}
+        - DEV_CSCI_UTILS=1
+
+    volumes:
+      - .:/app
