@@ -34,8 +34,9 @@ class CleanedReviews(Task):
                                                      parse_dates=['date'])
         if self.subset:
             dsk = dsk.get_partition(0)
-
-
+            
+            
+        dsk["review_id"]= dsk["review_id"].mask(dsk["review_id"].str.len()!=22)
         out = (dsk.dropna(subset=["user_id", "date"])[dsk["review_id"].str.len()==22]
 
 
@@ -43,15 +44,6 @@ class CleanedReviews(Task):
             .fillna(value={col: 0.0 for col in numcols})
             .astype({col:"int32" for col in numcols})
                )
-
-          #dsk = dsk.set_index("review_id")
-         # dsk["review_id"]=dsk["review_id"].mask(dsk["review_id"].str.len() != 22).dropna()
-
-       # print ("type out", type(out))
-      #  out=out.set_index("review_id").fillna(value={col: 0.0 for col in numcols}).astype({col:"int32" for col in numcols})
-
-
-      #  ddf["review_id"] = ddf["review_id"].mask(ddf["review_id"].str.len() != 22)
 
 
         out["length_reviews"] = out["text"].str.len()
@@ -90,12 +82,7 @@ class ByDecade(Task):
                )
 
 
-      #  self.output().write_dask(out, compression='gzip')
         ByStars.print_results(self, out)
-
-
- #   def print_results(self):
-  #      print(self.output().read_dask().compute())
 
 class ByStars(Task):
     subset = BoolParameter(default=True)
@@ -116,7 +103,6 @@ class ByStars(Task):
             .astype({"length_reviews":"int32"})
         )
 
-       # self.output().write_dask(out, compression='gzip')
         self.print_results(out)
 
     def print_results(self, out):
