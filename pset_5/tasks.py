@@ -22,24 +22,38 @@ class YelpReviews(ExternalTask):
 class CleanedReviews(Task):
     subset = BoolParameter(default=True)
     requires = Requires()
-    yelp_reviews = Requirement(YelpReviews)
+    reviews = Requirement(YelpReviews)
 
     output = TargetOutput( ext="/", target_class=ParquetTarget, glob="*.parquet")
 
     def run(self):
-
+#"yelp_reviews"
         numcols = ["funny", "cool", "useful", "stars"]
-        dsk = self.input()["yelp_reviews"].read_dask(storage_options=dict(requester_pays=True),
+        dsk = self.input()["reviews"].read_dask(storage_options=dict(requester_pays=True),
                                                      dtype={col:"float64" for col in numcols},
                                                      parse_dates=['date'])
         if self.subset:
             dsk = dsk.get_partition(0)
 
+
         out = (dsk.dropna(subset=["user_id", "date"])[dsk["review_id"].str.len()==22]
+
+
             .set_index("review_id")
             .fillna(value={col: 0.0 for col in numcols})
             .astype({col:"int32" for col in numcols})
-        )
+               )
+
+          #dsk = dsk.set_index("review_id")
+         # dsk["review_id"]=dsk["review_id"].mask(dsk["review_id"].str.len() != 22).dropna()
+
+       # print ("type out", type(out))
+      #  out=out.set_index("review_id").fillna(value={col: 0.0 for col in numcols}).astype({col:"int32" for col in numcols})
+
+
+      #  ddf["review_id"] = ddf["review_id"].mask(ddf["review_id"].str.len() != 22)
+
+
         out["length_reviews"] = out["text"].str.len()
         self.output().write_dask(out, compression='gzip')
         print(out.head())
@@ -65,6 +79,8 @@ class ByDecade(Task):
 
         if self.subset:
             dsk = dsk.get_partition(0)
+
+
 
         out = (
                 dsk.groupby((dsk.index.year//10) *10)["length_reviews"]
