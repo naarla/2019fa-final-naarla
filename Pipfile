@@ -16,6 +16,7 @@ s3fs = "*"
 dask = {extras = ["dataframe"],version = "*"}
 awscli = "*"
 csci-utils = {editable = true,git = "https://github.com/csci-e-29/2019fa-csci-utils-naarla"}
+mock = "*"
 
 [requires]
 python_version = "3.7"

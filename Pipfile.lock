@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "0e2abb8071d8474f8406c81f62ff6e96b1345db752b6f11c078b10d92eeb39ea"
+            "sha256": "a8d6769d1f6bb04d631c0c0da5debbcc762e54b007a5ff4093471bf1fcf726ae"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -143,6 +143,14 @@
             ],
             "index": "pypi",
             "version": "==2.8.9"
+        },
+        "mock": {
+            "hashes": [
+                "sha256:83657d894c90d5681d62155c82bda9c1187827525880eda8ff5df4ec813437c3",
+                "sha256:d157e52d4e5b938c550f39eb2fd15610db062441a9c2747d3dbfa9298211d0f8"
+            ],
+            "index": "pypi",
+            "version": "==3.0.5"
         },
         "numba": {
             "hashes": [
