@@ -6,7 +6,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c673734e767c036853ea/maintainability)](https://codeclimate.com/repos/5dce93817c881e016500c219/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c673734e767c036853ea/test_coverage)](https://codeclimate.com/repos/5dce93817c881e016500c219/test_coverage)
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
