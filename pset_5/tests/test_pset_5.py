@@ -1,4 +1,5 @@
 from unittest import TestCase
+from luigi import Task, Parameter
 
 
 class HashTests(TestCase):

@@ -4,5 +4,7 @@ omit =
     */test_*.py
     */*_tests.py
     */__init__.py
+    */__main__.py
+     */__cli__.py
 
 
