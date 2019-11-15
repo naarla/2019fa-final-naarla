@@ -41,6 +41,7 @@ class TaskTest(TestCase):
             build(
                 [ByStars()],
                 local_scheduler=True,
+                detailed_summary=True,
             ).status,
             LuigiStatusCode.SUCCESS,
         )
@@ -55,10 +56,10 @@ class TaskTest(TestCase):
             LuigiStatusCode.SUCCESS,
         )
 
-    def test_ByStars(self):
+    def test_YelpReviews(self):
         self.assertEqual(
             build(
-                [ByStars()],
+                [YelpReviews()],
                 local_scheduler=True,
                 detailed_summary=True,
             ).status,
