@@ -647,4 +647,4 @@ What is the average length of a review by the decade (eg `2000 <= year < 2010`)?
 
 ##### ByStars
 What is the average length of a review by the number of stars?
->>>>>>> origin/master
+
