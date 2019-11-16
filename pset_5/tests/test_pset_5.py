@@ -65,5 +65,22 @@ class TaskTest(TestCase):
             ).status,
             LuigiStatusCode.SUCCESS,
         )
+        
+class DataTests(TestCase):
+    def test_clean_reviews_has_correct_output(self):
+        self.assertEqual(
+            CleanedReviews().output().path,
+            os.path.join(os.getcwd()+"/data/"),
+        )
 
+    def test_bydecade_has_correct_output(self):
+        self.assertEqual(
+            ByDecade().output().path,
+            os.path.join(os.getcwd()+"/data/"+"by-decade/"),
+        )
 
+    def test_bystars_has_correct_output(self):
+        self.assertEqual(
+            ByStars().output().path,
+            os.path.join(os.getcwd()+"/data/"+"by-stars/"),
+        )
