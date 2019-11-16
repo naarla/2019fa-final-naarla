@@ -23,7 +23,7 @@ class HashTests(TestCase):
         assert isinstance(task2, Task)
 
 class TaskTest(TestCase):
-    """testing Stylize is a External Program task"""
+    '''Testing that the result of Cleaned Reviews, ByStars and ByDecade run has successful status'''
 
 
     def test_CleanedReviews(self):
@@ -66,3 +66,39 @@ class TaskTest(TestCase):
             LuigiStatusCode.SUCCESS,
         )
 
+
+class DependencyTest(TestCase):
+    '''Tests that Cleaned Reviews requires Yelp Reviews as dependency
+    and they both run as expected'''
+    def run(self, result=None):
+        with Worker() as w:
+            self.w = w
+            super(DependencyTest, self).run(result)
+
+    def test_dependency(self):
+        class YelpReviews(ExternalTask):
+            def complete(self):
+                return False
+
+        a = YelpReviews()
+
+        class CleanedReviews(Task):
+            def requires(self):
+                return a
+
+            def run(self):
+                self.has_run = True
+
+            def complete(self):
+                return self.has_run
+
+        b = CleanedReviews()
+
+        a.has_run = False
+        b.has_run = False
+
+        self.assertTrue(self.w.add(b))
+        self.assertTrue(self.w.run())
+
+        self.assertFalse(a.has_run)
+        self.assertFalse(b.has_run)
