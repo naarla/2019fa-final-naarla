@@ -70,7 +70,7 @@ class DataTests(TestCase):
     def test_clean_reviews_has_correct_output(self):
         self.assertEqual(
             CleanedReviews().output().path,
-            os.path.join(os.getcwd()+"/data/"),
+            os.path.join(os.getcwd()+"/data/"+"clean-reviews/"),
         )
 
     def test_bydecade_has_correct_output(self):
