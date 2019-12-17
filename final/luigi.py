@@ -8,22 +8,23 @@ import sys, os
 
 
 class ContentImage(ExternalTask):
-    BUCKET = "museumdata"
+    S3_BUCKET = 'museumdata'
     IMAGE_ROOT = "images"
 
     def output(self):
         s3_client = boto3.client('s3')
-        objects = s3_client.list_objects(Bucket=self.BUCKET, Prefix=self.IMAGE_ROOT)
+        objects = s3_client.list_objects(Bucket=self.S3_BUCKET, Prefix=self.IMAGE_ROOT)
         for obj in objects['Contents']:
                print ('Checking for files in S3: %s' % obj['Key'])
         return S3Target(
-            "s3://{}/{}".format(self.BUCKET, self.IMAGE_ROOT), format=luigi.format.Nop
+            "s3://{}/{}".format(self.S3_BUCKET, self.IMAGE_ROOT), format=luigi.format.Nop
         )
 
 
 class DownloadImage(Task):
 
-    S3_BUCKET = "museumdata"
+    S3_BUCKET = 'museumdata'
+    #S3_BUCKET = str(os.environ['S3_BUCKET'].split('/')[0])
     LOCAL_ROOT = os.path.abspath("data")
     SHARED_RELATIVE_PATH = "images"
 
@@ -51,4 +52,4 @@ class DownloadImage(Task):
             print ('Now downloading: %s' % key)
             if not key.endswith("/"):
                 file_name = key.split('/')[-1]
-                s3_client.download_file('museumdata', key, self.output().path+ "/" + file_name)
+                s3_client.download_file(self.S3_BUCKET, key, self.output().path+ "/" + file_name)
