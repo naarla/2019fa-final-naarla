@@ -8,15 +8,20 @@ pytest = "*"
 pytest-cov = "*"
 
 [packages]
-fastparquet = "*"
 pandas = "*"
 luigi = "*"
 setuptools-scm = "*"
 s3fs = "*"
 dask = {extras = ["dataframe"],version = "*"}
 awscli = "*"
-csci-utils = {editable = true,git = "https://github.com/csci-e-29/2019fa-csci-utils-naarla"}
-mock = "*"
+dask-image = "*"
+pillow = "*"
+h5py = "*"
+boto3 = "*"
+torch = "*"
+opencv-python = "*"
+tables = "*"
+moto = "*"
 
 [requires]
 python_version = "3.7"
