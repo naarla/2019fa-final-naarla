@@ -4,11 +4,13 @@ omit =
     */test_*.py
     */*_tests.py
     */__init__.py
+
     */__main__.py
      */cli.py
      */_version.py
-     */pset_5/target.py
-     */pset_5/tasks.py
+     */final/target.py
+     */final/tasks.py
+
 
 
 

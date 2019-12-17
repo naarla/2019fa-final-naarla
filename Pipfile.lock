@@ -1,7 +1,11 @@
 {
     "_meta": {
         "hash": {
+<<<<<<< HEAD
             "sha256": "a1e365af414c2949fa67c30075550a9cab27cda9e2e872de0bcdbb9381f01b9a"
+=======
+            "sha256": "1dfb16763c8078815e4719f17a724ba1f2bf416d65818616a2e2b24e8c24bcfb"
+>>>>>>> origin/master
         },
         "pipfile-spec": 6,
         "requires": {
@@ -386,6 +390,7 @@
             "index": "pypi",
             "version": "==1.3.14"
         },
+<<<<<<< HEAD
         "numexpr": {
             "hashes": [
                 "sha256:08bdae334855b19c55137b5a3c0d1bb1b05f23f7e6df24e47dfc8d5b3de4e10a",
@@ -419,6 +424,8 @@
             ],
             "version": "==2.7.0"
         },
+=======
+>>>>>>> origin/master
         "numpy": {
             "hashes": [
                 "sha256:0a7a1dd123aecc9f0076934288ceed7fd9a81ba3919f11a855a7887cbe82a02f",
@@ -499,7 +506,10 @@
                 "sha256:e45055c30a608076e31a9fcd780a956ed3b1fa20db61561b8d88b79259f526f7",
                 "sha256:ee50c2142cdcf41995655d499a157d0a812fce55c97d9aad13bc1eef837ed36c"
             ],
+<<<<<<< HEAD
             "index": "pypi",
+=======
+>>>>>>> origin/master
             "version": "==0.25.3"
         },
         "partd": {
@@ -639,6 +649,7 @@
             ],
             "version": "==3.4.2"
         },
+<<<<<<< HEAD
         "s3fs": {
             "hashes": [
                 "sha256:19cb59b9479f32a5ed6e20e249ed655a03f8329935a2b5329f99b5a07d564220",
@@ -647,6 +658,8 @@
             "index": "pypi",
             "version": "==0.4.0"
         },
+=======
+>>>>>>> origin/master
         "s3transfer": {
             "hashes": [
                 "sha256:6efc926738a3cd576c2a79725fed9afde92378aa5c6a957e3af010cb019fac9d",
@@ -709,6 +722,7 @@
             ],
             "version": "==3.1.0"
         },
+<<<<<<< HEAD
         "tables": {
             "hashes": [
                 "sha256:169450bd11959c0e1c43137e768cf8b60b2a4f3b2ebf9a620e21865dc0c2d059",
@@ -737,12 +751,15 @@
             "index": "pypi",
             "version": "==3.6.1"
         },
+=======
+>>>>>>> origin/master
         "toolz": {
             "hashes": [
                 "sha256:08fdd5ef7c96480ad11c12d472de21acd32359996f69a5259299b540feba4560"
             ],
             "version": "==0.10.0"
         },
+<<<<<<< HEAD
         "torch": {
             "hashes": [
                 "sha256:0cec2e13a2e95c24c34f17d437f354ee2a40902e8d515a524556b350e12555dd",
@@ -758,6 +775,8 @@
             "index": "pypi",
             "version": "==1.3.1"
         },
+=======
+>>>>>>> origin/master
         "tornado": {
             "hashes": [
                 "sha256:0662d28b1ca9f67108c7e3b77afabfb9c7e87bde174fbda78186ecedc2499a9d",

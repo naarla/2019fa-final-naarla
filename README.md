@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Pset 5
 
 [![Build Status](https://travis-ci.com/csci-e-29/2019fa-pset-5-naarla.svg?token=jrhzVcBhxR2g4ZmHNfrx&branch=master)](https://travis-ci.com/csci-e-29/2019fa-pset-5-naarla)
@@ -647,4 +648,57 @@ What is the average length of a review by the decade (eg `2000 <= year < 2010`)?
 
 ##### ByStars
 What is the average length of a review by the number of stars?
+=======
+# Pset 1
+<!-- Adding Travis Climate Things here
+-->
+[![Build Status](https://travis-ci.com/csci-e-29/2019fa-pset-1-naarla.svg?token=jrhzVcBhxR2g4ZmHNfrx&branch=master)](https://travis-ci.com/csci-e-29/2019fa-pset-1-naarla)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/b84ec09f03bbd90a2bae/maintainability)](https://codeclimate.com/repos/5d8fe3943193dc0162000010/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b84ec09f03bbd90a2bae/test_coverage)](https://codeclimate.com/repos/5d8fe3943193dc0162000010/test_coverage)
+
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+#### Installation
+
+If you are using the Docker environment, you should be good to go.  Mac/windows
+users should [install
+pipenv](https://pipenv.readthedocs.io/en/latest/#install-pipenv-today) into
+their main python environment as instructed.  If you need a new python 3.7
+environment, you can use a base
+
+
+### Credentials and data
+
+Git should be for code, not data, so we've created an S3 bucket for problem set
+file distribution.  For this problem set, we've uploaded a data set of your
+answers to the "experience demographics" quiz that you should have completed in
+the first week. In order to access the data in S3, we need to install and
+configure `awscli` both for running the code locally and running our tests in
+Travis.
+
+
+
+```
+AWS_ACCESS_KEY_ID=XXXX
+OTHER_ENV_VARIABLE=XXX
+```
+
+
+According to the
+[documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+the easiest way is:
+
+```bash
+aws configure
+AWS Access Key ID [None]: ACCESS_KEY
+AWS Secret Access Key [None]: SECRET_KEY
+Default region name [None]:
+Default output format [None]:
+```
+>>>>>>> origin/master
 
